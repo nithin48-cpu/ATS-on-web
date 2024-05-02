@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="text-8xl font-sans subpixel-antialiased font-black text-green-400 bg-green-100 shadow-md flex justify-center p-3">
+    <h1 >ATS System</h1>
+</div>
+<div class="grid grid-cols-2">
+    <div class="container mx-auto p-5 ">
+    
+          <form method='POST' enctype='multipart/form-data'>
+            {{form.hidden_tag()}}
+            <div class="text-3xl font-sans subpixel-antialiased font-bold p-3">
+                Job Description
+            </div>
+            <p>{{ form.description.label }} {{ form.description(rows="7",class="md:w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 placeholder-green-400 text-gray-900 mx-2") }}</p> 
+
+            <div class="text-3xl font-sans subpixel-antialiased font-bold p-3">
+                Resume
+            </div>
+            <div class="flex flex-row flex-auto">
+            {{form.file(class="ml-2 mr-64")}}
+            {{form.submit( class="px-7 py-3 bg-blue-600 rounded-3xl text-white cursor-pointer")}}
+            </div>
+        </form>
+    </div>
+    <div>
+        <div class="container mx-auto p-5">
+        <div class="text-3xl font-sans subpixel-antialiased font-bold p-3">
+            Response
+        </div>
+        <p class=" mx-2">{{response}}</p>
+    </div>
+    </div>
+    </div>
+<!-- <div class="grid grid-cols-2">
+<div class="container mx-auto p-5 "  >
+    <form methods='GET' action="/match" enctype="multipart/form-data">
+        <div class="text-3xl font-sans subpixel-antialiased font-bold p-3">
+            Job Description
+        </div>
+        <textarea name="text" rows="7" class="md:w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 placeholder-green-400 text-gray-900 mx-2" placeholder="Type something here"></textarea>
+        <br> 
+       
+            <div class="text-3xl font-sans subpixel-antialiased font-bold p-3">
+                Resume
+            </div>
+        <div class="flex flex-row flex-auto">
+            <input type="file" name="resume" class="ml-2 mr-64">
+            <input type="submit" value="Match" class="px-7 py-3 bg-blue-600 rounded-3xl text-white cursor-pointer">
+        </div>
+      </form>
+
+      <!-- <form method='POST' enctype='multipart/form-data'>
+        {{form.hidden_tag()}}
+        <div class="text-3xl font-sans subpixel-antialiased font-bold p-3">
+            Job Description
+        </div>
+        <p>{{ form.description.label }} {{ form.description(class="md:w-6/12 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 placeholder-green-400 text-gray-900") }}</p> 
+        <div class="text-3xl font-sans subpixel-antialiased font-bold p-3">
+            Resume
+        </div>
+        {{form.file()}}
+        <br>
+        {{form.submit()}}
+    </form>
+      <p>{{response}}</p> 
+</div>
+<div>
+    <div class="container mx-auto p-5">
+    <div class="text-3xl font-sans subpixel-antialiased font-bold p-3">
+        Response
+    </div>
+    <p class=" mx-2">{{response}}</p>
+</div>
+</div>
+</div> -->
+
+    <script src="main.js"></script>
+</body>
+</html>
